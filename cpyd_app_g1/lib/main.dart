@@ -26,7 +26,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 3),
+    Timer(Duration(seconds: 5),
             ()=>Navigator.pushReplacement(context,
             MaterialPageRoute(builder:
                 (context) =>
@@ -39,7 +39,9 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Container(
         color: Colors.white,
-        child: new Image(image: new AssetImage("lib/assets/images/Logo_marca_ropa_deco_cursiva_verde.gif"))
+        child: new Image(
+          image: new AssetImage("lib/assets/images/Logo_UTEM.gif")
+        )
     );
   }
 }
