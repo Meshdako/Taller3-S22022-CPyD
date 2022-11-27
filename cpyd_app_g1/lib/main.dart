@@ -1,10 +1,14 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:cpyd_app_g1/src/pages/login_page.dart';
+
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -12,47 +16,48 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: MyHomePage(),
+      home: const MyHomePage(),
       debugShowCheckedModeBanner: false,
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  State<MyHomePage> createState() => _MyHomePageState();
 }
+
+/* Splash Screen */
 class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 5),
-            ()=>Navigator.pushReplacement(context,
-            MaterialPageRoute(builder:
-                (context) =>
-                SecondScreen()
-            )
-        )
-    );
+    Timer(
+        const Duration(seconds: 5),
+        () => Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => const InicioSesion())));
   }
+
   @override
   Widget build(BuildContext context) {
     return Container(
         color: Colors.white,
-        child: new Image(
-          image: new AssetImage("lib/assets/images/Logo_UTEM.gif")
-        )
-    );
+        child:
+            const Image(image: AssetImage("lib/assets/images/Logo_UTEM.gif")));
   }
 }
+
+/* Página de Inicio */
 class SecondScreen extends StatelessWidget {
+  const SecondScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title:Text("UTEM")),
-      body: Center(
-          child:Text("Home page",textScaleFactor: 2,)
-      ),
+    return Container(
+      color: Colors.white,
+      child: const Text('Hola'),
     );
   }
 }
