@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_pokeapi_with_provider/constant.dart';
-import 'package:flutter_pokeapi_with_provider/model/pokemondetail_model.dart';
+import 'package:cpyd_app_g1/constant.dart';
+import 'package:cpyd_app_g1/model/pokemondetail_model.dart';
 import '../widget/aboutpokemon_widget.dart';
 import '../widget/basestats_widget.dart';
 

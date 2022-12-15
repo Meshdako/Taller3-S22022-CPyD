@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
-import 'package:flutter_pokeapi_with_provider/model/pokemondetail_model.dart';
-import 'package:flutter_pokeapi_with_provider/model/pokemons_model.dart';
+import 'package:cpyd_app_g1/model/pokemondetail_model.dart';
+import 'package:cpyd_app_g1/model/pokemons_model.dart';
 import 'package:http/http.dart' as http;
 
 class PokemonProvider with ChangeNotifier {

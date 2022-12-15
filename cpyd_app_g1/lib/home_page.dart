@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_pokeapi_with_provider/widget/pokemon_widget.dart';
-import 'package:flutter_pokeapi_with_provider/screen/pokemon_screen.dart';
-import 'package:flutter_pokeapi_with_provider/state_manager/pokemon_provider.dart';
+import 'package:cpyd_app_g1/widget/pokemon_widget.dart';
+import 'package:cpyd_app_g1/screen/pokemon_screen.dart';
+import 'package:cpyd_app_g1/state_manager/pokemon_provider.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
