@@ -42,7 +42,7 @@ class PokemonWidget extends StatelessWidget {
                 child: Text("${pokemon.name}",
                     style: const TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 20,
+                        fontSize: 15,
                         color: Colors.black)),
                 decoration: BoxDecoration(
                   color: Colors.white,

@@ -4,7 +4,7 @@ import 'package:cpyd_app_g1/model/pokemons_model.dart';
 import 'package:http/http.dart' as http;
 
 class PokemonProvider with ChangeNotifier {
-  final String _baseURL = 'https://pokeapi.co/api/v2/pokemon?limit=12';
+  final String _baseURL = 'https://pokeapi.co/api/v2/pokemon?limit=10';
 
   PokemonsModel _pokemons = PokemonsModel();
   PokemonsModel get pokemons => _pokemons;
@@ -12,10 +12,10 @@ class PokemonProvider with ChangeNotifier {
   final List<PokemonDetailModel> _pokemonsDetail = [];
   List<PokemonDetailModel> get pokemonsDetail => _pokemonsDetail;
   
-  int cont = -12;
+  int cont = -10;
 
   Future<dynamic> getPokemons() async {
-      cont = cont+12;
+      cont = cont+10;
       Uri url = Uri.parse(_baseURL+'&offset='+cont.toString());
       final response = await http.get(url);
       final data = pokemonsModelFromJson(response.body);
@@ -24,7 +24,7 @@ class PokemonProvider with ChangeNotifier {
         _pokemons = data;
         notifyListeners();
 
-      for(int i=cont-12;i<=cont;i++){
+      for(int i=cont-10;i<=cont;i++){
         _pokemonsDetail.removeWhere((PokemonDetailModel) => PokemonDetailModel.id == i);
       }
 
@@ -35,7 +35,7 @@ class PokemonProvider with ChangeNotifier {
   }
 
   Future<dynamic> backPokemons() async {
-      cont = cont-12;
+      cont = cont-10;
       Uri url = Uri.parse(_baseURL+'&offset='+cont.toString());
       final response = await http.get(url);
       final data = pokemonsModelFromJson(response.body);
@@ -44,7 +44,7 @@ class PokemonProvider with ChangeNotifier {
         _pokemons = data;
         notifyListeners();
 
-      for(int i=cont+24;i>=cont;i--){
+      for(int i=cont+20;i>=cont;i--){
         _pokemonsDetail.removeWhere((PokemonDetailModel) => PokemonDetailModel.id == i);
       }
         for (var result in _pokemons.results!) {
