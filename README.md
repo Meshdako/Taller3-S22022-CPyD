@@ -10,7 +10,7 @@ Creación de una aplicación móvil, con _splash screen_, inicio de sesión, mue
 * Martín Sobarzo Huerta
 * Renato Palominos Concha
 * Cristóbal Abarca Abarzúa
-* MA
+* Matías Álvarez Castillo
 * Rodrigo Ubilla Castro
 
 ## Pantallas
