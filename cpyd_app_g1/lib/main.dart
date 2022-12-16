@@ -37,8 +37,8 @@ class _MyHomePageState extends State<MyHomePage> {
     Timer(
         const Duration(seconds: 5),
         () => Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (context) => const LoginScreen())));
-  }
+            MaterialPageRoute(builder: (context) => const LoginScreen())));   
+            }
 
   @override
   Widget build(BuildContext context) {

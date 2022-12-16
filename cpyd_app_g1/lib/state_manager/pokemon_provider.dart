@@ -45,7 +45,7 @@ class PokemonProvider with ChangeNotifier {
         notifyListeners();
 
       for(int i=cont+20;i>=cont;i--){
-        _pokemonsDetail.removeWhere((PokemonDetailModel) => PokemonDetailModel.id == i);
+          _pokemonsDetail.removeWhere((PokemonDetailModel) => PokemonDetailModel.id == i);
       }
         for (var result in _pokemons.results!) {
           await getPokemonsDetail(resultURL: result.url!);

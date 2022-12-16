@@ -13,11 +13,31 @@ class AboutPokemonWidget extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
-            Text('Height'),
+            Image(
+              image: AssetImage('lib/assets/Icons/Vector-1.png'),
+              ),
+            Image(
+              image: AssetImage('lib/assets/Icons/whitescreen.png'),
+              width: 25,
+              height: 20,
+              ),
+            Image(
+              image: AssetImage('lib/assets/Icons/Vector.png'),
+              ),
+            Image(
+              image: AssetImage('lib/assets/Icons/whitescreen.png'),
+              width: 25,
+              height: 20,
+              ),
+        ],),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: const [
+            Text('Altura'),
             SizedBox(height: 20),
-            Text('Weight'),
+            Text('Peso'),
             SizedBox(height: 20),
-            Text('Ability'),
+            Text('Habilidad'),
           ],
         ),
         const SizedBox(
@@ -28,11 +48,11 @@ class AboutPokemonWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                (pokemon.height! / 10).toString() + ' cm',
+                "${(pokemon.height! / 10).toString()} m",
               ),
               const SizedBox(height: 20),
               Text(
-                (pokemon.weight! / 10).toString() + ' kg',
+                "${(pokemon.weight! / 10).toString()} Kg",
               ),
               const SizedBox(height: 20),
               Wrap(
@@ -57,7 +77,7 @@ class AboutPokemonWidget extends StatelessWidget {
                       ),
                     )
                     .toList(),
-              )
+              ), 
             ],
           ),
         ),

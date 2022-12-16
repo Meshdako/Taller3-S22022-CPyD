@@ -104,8 +104,8 @@ class _PokemonScreenState extends State<PokemonScreen>
                             unselectedLabelColor: Colors.grey,
                             controller: _tabController,
                             tabs: const [
-                              Text('About'),
-                              Text('Base Stats'),
+                              Text('Datos'),
+                              Text('Estadisticas'),
                             ],
                           ),
                         ),
