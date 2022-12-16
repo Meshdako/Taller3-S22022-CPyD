@@ -9,7 +9,7 @@ Creación de una aplicación móvil, con _splash screen_, inicio de sesión, mue
 ## Integrantes
 * Martín Sobarzo Huerta
 * Renato Palominos Concha
-* CA
+* Cristóbal Abarca Abarzúa
 * MA
 * Rodrigo Ubilla Castro
 
