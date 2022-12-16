@@ -26,15 +26,23 @@ class _PokemonScreenState extends State<PokemonScreen>
     init(this);
   }
 
+  Image appLogo = const Image(
+      image: ExactAssetImage("lib/assets/Icons/Pokeball.png"),
+      height: 30,
+      width: 30,
+      alignment: FractionalOffset.center);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red.shade900,
-        title: const Text(
+        title:
+            appLogo /* const Text(
           'Pokemon',
           style: TextStyle(color: Colors.yellow),
-        ),
+        ) */
+        ,
         centerTitle: true,
       ),
       body: Stack(
@@ -50,7 +58,7 @@ class _PokemonScreenState extends State<PokemonScreen>
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      widget.pokemon.name!,
+                      "#${widget.pokemon.id.toString()} - ${widget.pokemon.name!}",
                       style: const TextStyle(
                         fontSize: 25,
                         fontWeight: FontWeight.bold,
