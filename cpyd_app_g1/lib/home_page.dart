@@ -14,15 +14,13 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final ScrollController _scrollController = ScrollController();
 
-  @override
-  void initState() {
-    super.initState();
-    _scrollController.addListener(() {
-      if (_scrollController.position.pixels ==
-          _scrollController.position.maxScrollExtent) {
-        context.read<PokemonProvider>().getMorePokemons();
+  void _onItemTapped(int index) {
+      if(index == 1){
+        context.read<PokemonProvider>().getPokemons();
       }
-    });
+      if(index == 0){
+        context.read<PokemonProvider>().backPokemons();
+      }
   }
 
   @override
@@ -73,6 +71,19 @@ class _HomePageState extends State<HomePage> {
             );
           }
         },
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.arrow_back),
+            label: 'Anterior',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.arrow_forward),
+            label: 'Siguiente',
+          ),
+        ],
+        onTap: _onItemTapped,
       ),
     );
   }
