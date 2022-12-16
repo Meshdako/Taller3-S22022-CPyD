@@ -15,24 +15,27 @@ class _HomePageState extends State<HomePage> {
   final ScrollController _scrollController = ScrollController();
 
   void _onItemTapped(int index) {
-      if(index == 1){
-        context.read<PokemonProvider>().getPokemons();
-      }
-      if(index == 0){
-        context.read<PokemonProvider>().backPokemons();
-      }
+    if (index == 1) {
+      context.read<PokemonProvider>().getPokemons();
+    }
+    if (index == 0) {
+      context.read<PokemonProvider>().backPokemons();
+    }
   }
+
+  Image appLogo = const Image(
+      image: ExactAssetImage("lib/assets/Icons/Pokeball.png"),
+      height: 30,
+      width: 30,
+      alignment: FractionalOffset.center);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: const Color(0XFFC4102B),
       appBar: AppBar(
-        backgroundColor: Colors.red.shade900,
-        title: const Text(
-          'Pokedex',
-          style: TextStyle(color: Colors.yellow),
-        ),
+        title: appLogo,
+        backgroundColor: const Color(0XFFC4102B),
         centerTitle: true,
       ),
       body: FutureBuilder(
