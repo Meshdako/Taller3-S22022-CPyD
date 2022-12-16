@@ -58,7 +58,7 @@ class _PokemonScreenState extends State<PokemonScreen>
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "#${widget.pokemon.id.toString()} - ${widget.pokemon.name!}",
+                      "#${widget.pokemon.id.toString()} - ${widget.pokemon.name!.toUpperCase()}",
                       style: const TextStyle(
                         fontSize: 25,
                         fontWeight: FontWeight.bold,
