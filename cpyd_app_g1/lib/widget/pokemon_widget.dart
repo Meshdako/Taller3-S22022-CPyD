@@ -23,25 +23,33 @@ class PokemonWidget extends StatelessWidget {
         ),
         child: Stack(
           children: <Widget>[
-            Text(
-              "#${pokemon.id.toString()} ${pokemon.name}",
-              style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 50,
-                  color: Colors.white),
-            ),
-            Center(
-              child: Container(
-                  child: const Align(
-                alignment: Alignment(50, 50),
-              )),
-            ),
             Center(
                 child: Image.network(
               pokemon.sprites!.other!.officialArtwork!.frontDefault!,
-              height: 150,
-              width: 150,
-            ))
+            )),
+            Text(
+              "#${pokemon.id.toString()}",
+              style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 25,
+                  color: Colors.black),
+            ),
+            Align(
+              alignment: Alignment.bottomRight,
+              child: Container(
+                padding: const EdgeInsets.all(8),
+                // ignore: sort_child_properties_last
+                child: Text("${pokemon.name}",
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                        color: Colors.black)),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(15),
+                ),
+              ),
+            )
             /* Positioned(
               bottom: 1,
               right: 1,
