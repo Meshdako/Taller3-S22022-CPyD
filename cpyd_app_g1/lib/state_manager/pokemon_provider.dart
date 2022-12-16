@@ -4,17 +4,19 @@ import 'package:cpyd_app_g1/model/pokemons_model.dart';
 import 'package:http/http.dart' as http;
 
 class PokemonProvider with ChangeNotifier {
-  final String _baseURL = 'https://pokeapi.co/api/v2/pokemon?limit=20&offset=0';
+  final String _baseURL = 'https://pokeapi.co/api/v2/pokemon?limit=12';
 
   PokemonsModel _pokemons = PokemonsModel();
   PokemonsModel get pokemons => _pokemons;
 
   final List<PokemonDetailModel> _pokemonsDetail = [];
   List<PokemonDetailModel> get pokemonsDetail => _pokemonsDetail;
+  
+  int cont = -12;
 
   Future<dynamic> getPokemons() async {
-    try {
-      Uri url = Uri.parse(_baseURL);
+      cont = cont+12;
+      Uri url = Uri.parse(_baseURL+'&offset='+cont.toString());
       final response = await http.get(url);
       final data = pokemonsModelFromJson(response.body);
 
@@ -22,19 +24,19 @@ class PokemonProvider with ChangeNotifier {
         _pokemons = data;
         notifyListeners();
 
+      for(int i=cont-12;i<=cont;i++){
+        _pokemonsDetail.removeWhere((PokemonDetailModel) => PokemonDetailModel.id == i);
+      }
+
         for (var result in _pokemons.results!) {
           await getPokemonsDetail(resultURL: result.url!);
         }
       }
-    } catch (e) {
-      debugPrint(e.toString());
-    }
   }
 
-  Future<dynamic> getMorePokemons() async {
-    try {
-      print('test');
-      Uri url = Uri.parse(_pokemons.next!);
+  Future<dynamic> backPokemons() async {
+      cont = cont-12;
+      Uri url = Uri.parse(_baseURL+'&offset='+cont.toString());
       final response = await http.get(url);
       final data = pokemonsModelFromJson(response.body);
 
@@ -42,21 +44,20 @@ class PokemonProvider with ChangeNotifier {
         _pokemons = data;
         notifyListeners();
 
+      for(int i=cont+24;i>=cont;i--){
+        _pokemonsDetail.removeWhere((PokemonDetailModel) => PokemonDetailModel.id == i);
+      }
         for (var result in _pokemons.results!) {
           await getPokemonsDetail(resultURL: result.url!);
         }
-        return _pokemons;
       }
-    } catch (e) {
-      debugPrint(e.toString());
-    }
   }
 
   Future<dynamic> getPokemonsDetail({required String resultURL}) async {
     try {
       Uri url = Uri.parse(resultURL);
       final response = await http.get(url);
-      final data = pokemonDetailModelFromJson(response.body);
+      final data = pokemonDetailModelFromJson(response.body); 
 
       if (response.statusCode == 200) {
         _pokemonsDetail.add(data);
