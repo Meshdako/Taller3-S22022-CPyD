@@ -22,15 +22,34 @@ class PokemonWidget extends StatelessWidget {
           border: Border.all(color: Colors.grey.shade200),
         ),
         child: Stack(
-          children: [
-            Positioned(
+          children: <Widget>[
+            Text(
+              "#${pokemon.id.toString()} ${pokemon.name}",
+              style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 50,
+                  color: Colors.white),
+            ),
+            Center(
+              child: Container(
+                  child: const Align(
+                alignment: Alignment(50, 50),
+              )),
+            ),
+            Center(
+                child: Image.network(
+              pokemon.sprites!.other!.officialArtwork!.frontDefault!,
+              height: 150,
+              width: 150,
+            ))
+            /* Positioned(
               bottom: 1,
               right: 1,
               child: Image.network(
                 pokemon.sprites!.other!.officialArtwork!.frontDefault!,
-                fit: BoxFit.contain,
-                height: 65,
-                width: 65,
+                fit: BoxFit.fill,
+                height: 70,
+                width: 70,
               ),
             ),
             Column(
@@ -38,10 +57,13 @@ class PokemonWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
+                  "#${pokemon.id.toString()}",
+                ),
+                Text(
                   pokemon.name!,
                   style: const TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 18,
+                      fontSize: 12,
                       color: Colors.white),
                 ),
                 Column(
@@ -69,7 +91,7 @@ class PokemonWidget extends StatelessWidget {
                       .toList(),
                 )
               ],
-            )
+            ) */
           ],
         ),
       ),
