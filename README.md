@@ -11,7 +11,7 @@ Creación de una aplicación móvil, con _splash screen_, inicio de sesión, mue
 * Renato Palominos Concha
 * CA
 * MA
-* RU
+* Rodrigo Ubilla Castro
 
 ## Pantallas
 
