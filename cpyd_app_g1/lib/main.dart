@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:cpyd_app_g1/home_page.dart';
 import 'package:cpyd_app_g1/screen/login.dart';
@@ -30,7 +32,23 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   @override
-  Widget build(BuildContext context) {
-    return const LoginScreen();
+  void initState() {
+    super.initState();
+    Timer(
+        const Duration(seconds: 5),
+        () => Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => const LoginScreen())));
   }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        color: Colors.white,
+        child: const Image(
+          image: AssetImage("lib/assets/images/Logo_UTEM.gif"),
+        ));
+  }
+  /* Widget build(BuildContext context) {
+    return const LoginScreen();
+  } */
 }
