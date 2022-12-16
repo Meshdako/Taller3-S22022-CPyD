@@ -1,25 +1,27 @@
 import 'dart:ui';
 
 const Map<String, Color> pokemonTypeMap = {
-  "grass": Color(0xFF78C850),
-  "poison": Color(0xFF98558e),
-  "fire": Color(0xFFFB6C6C),
-  "flying": Color(0xFFA890F0),
-  "bug": Color(0xFF48D0B0),
-  "water": Color(0xFF7AC7FF),
-  "normal": Color(0xFFbcbcad),
-  "ground": Color(0xFFeece5a),
-  "fairy": Color(0xFFf9acff),
-  "electric": Color(0xFFfee53c),
-  "fighting": Color(0xFFa75544),
-  "psychic": Color(0xFFf160aa),
-  "rock": Color(0xFFcebd74),
-  "steel": Color(0xFFc4c2db),
-  "ice": Color(0xFF96f1ff),
-  "ghost": Color(0xFF7C538C),
-  "dragon": Color(0xD07038F8),
-  "dark": Color(0xFF8f6955),
+  "normal": Color(0xFFA8A77A),
+	"fire": Color(0xFFEE8130),
+	"water": Color(0xFF6390F0),
+	"electric": Color(0xFFF7D02C),
+	"grass": Color(0xFF7AC74C),
+	"ice": Color(0xFF96D9D6),
+	"fighting": Color(0xFFC22E28),
+	"poison": Color(0xFFA33EA1),
+	"ground": Color(0xFFE2BF65),
+	"flying": Color(0xFFA98FF3),
+	"psychic": Color(0xFFF95587),
+	"bug": Color(0xFFA6B91A),
+	"rock": Color(0xFFB6A136),
+	"ghost": Color(0xFF735797),
+	"dragon": Color(0xFF6F35FC),
+	"dark": Color(0xFF705746),
+	"steel": Color(0xFFB7B7CE),
+	"fairy": Color(0xFFD685AD),
 };
+
+
 
 const Map<String, Color> pokemonTypeMap2 = {
   "grass": Color.fromARGB(255, 180, 233, 156),
@@ -43,7 +45,7 @@ const Map<String, Color> pokemonTypeMap2 = {
 };
 
 Color getBackGroundColor(String type) {
-  return pokemonTypeMap[type] ?? const Color(0xFF78C850);
+  return pokemonTypeMap[type] ?? const Color(0xFFA8A77A);
 }
 
 
