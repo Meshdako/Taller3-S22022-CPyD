@@ -23,9 +23,4 @@ Creación de una aplicación móvil, con _splash screen_, inicio de sesión, mue
 
 ![Tarjeta](Screenshots/Pokémon_Tarjeta.jpg)
 
-<style type="text/css">
-    img {
-        width: 50%;
-    }
-</style>
 # Muchas gracias.
