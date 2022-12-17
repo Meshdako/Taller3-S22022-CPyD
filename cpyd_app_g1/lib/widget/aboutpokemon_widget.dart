@@ -7,10 +7,14 @@ class AboutPokemonWidget extends StatelessWidget {
 
   _getString() {
     String? oculta;
-    //if (pokemon.abilities! 0) {
+    if (pokemon.abilities!.length > 1) {
       oculta = pokemon.abilities![1].ability?.name! ?? "";
-    //}
-    return oculta;
+      return oculta;
+    }
+    else{
+      oculta = "No tiene habilidad oculta";
+      return oculta;
+    }
   }
 
   @override
