@@ -5,6 +5,14 @@ class AboutPokemonWidget extends StatelessWidget {
   final PokemonDetailModel pokemon;
   const AboutPokemonWidget({Key? key, required this.pokemon}) : super(key: key);
 
+  _getString() {
+    String? oculta;
+    //if (pokemon.abilities! 0) {
+      oculta = pokemon.abilities![1].ability?.name! ?? "";
+    //}
+    return oculta;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -69,32 +77,28 @@ class AboutPokemonWidget extends StatelessWidget {
           height: 20,
         ),
         Container(
-            color: Colors.red,
-            child: Column(
-              children: [
-                Container(
-                  color: Colors.green,
-                  child: Row(children: const [
-                    Text("Forma: Original"),
-                  ]),
-                ),
-                Container(
-                  child: Row(
-                    children: [Text("Habilidad: ")],
-                  ),
-                ),
-                Container(
-                  child: const Text("Habilidad: "),
-                ),
-                Container(
-                  child: const Text("Habilidad Oculta: "),
-                ),
-                Container(
-                  child:
-                      const Text("Ubicación: ", style: TextStyle(fontSize: 20)),
-                )
-              ],
-            )),
+          color: Colors.red,
+          child: Column(
+            children: [
+              Container(
+                color: Colors.green,
+                child: Row(children: const [
+                  Text("Forma: Original"),
+                ]),
+              ),
+              Row(children: [
+                const Text("Habilidad: "),
+                Text(pokemon.abilities![0].ability!.name!)
+              ]),
+              Row(
+                children: [
+                  const Text("Habilidad Oculta: "),
+                  Text(_getString())
+                ],
+              )
+            ],
+          ),
+        ),
       ],
     );
   }
