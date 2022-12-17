@@ -46,7 +46,4 @@ class _MyHomePageState extends State<MyHomePage> {
           image: AssetImage("lib/assets/images/Logo_UTEM.gif"),
         ));
   }
-  /* Widget build(BuildContext context) {
-    return const LoginScreen();
-  } */
 }
