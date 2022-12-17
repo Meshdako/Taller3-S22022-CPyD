@@ -12,6 +12,46 @@ class PokemonScreen extends StatefulWidget {
   State<PokemonScreen> createState() => _PokemonScreenState();
 }
 
+_getTranslate(String? type) {
+    if (type == "normal") {
+      return "Normal";
+    } else if (type == "fire") {
+      return "Fuego";
+    } else if (type == "water") {
+      return "Agua";
+    } else if (type == "electric") {
+      return "Eléctrico";
+    } else if (type == "grass") {
+      return "Planta";
+    } else if (type == "ice") {
+      return "Hielo";
+    } else if (type == "fighting") {
+      return "Lucha";
+    } else if (type == "poison") {
+      return "Veneno";
+    } else if (type == "ground") {
+      return "Tierra";
+    } else if (type == "flying") {
+      return "Volador";
+    } else if (type == "psychic") {
+      return "Psíquico";
+    } else if (type == "bug") {
+      return "Bicho";
+    } else if (type == "rock") {
+      return "Roca";
+    } else if (type == "ghost") {
+      return "Fantasma";
+    } else if (type == "dragon") {
+      return "Dragón";
+    } else if (type == "dark") {
+      return "Siniestro";
+    } else if (type == "steel") {
+      return "Acero";
+    } else if (type == "fairy") {
+      return "Hada";
+    } 
+  }
+
 class _PokemonScreenState extends State<PokemonScreen>
     with TickerProviderStateMixin {
   TabController? _tabController;
@@ -73,7 +113,7 @@ class _PokemonScreenState extends State<PokemonScreen>
                                 ),
                                 borderRadius: BorderRadius.circular(10),
                               ),
-                              child: Text(e.type!.name!),
+                              child: Text(_getTranslate(e.type!.name!)),
                             ),
                           )
                           .toList(),
