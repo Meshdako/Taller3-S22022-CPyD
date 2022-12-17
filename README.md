@@ -15,7 +15,17 @@ Creación de una aplicación móvil, con _splash screen_, inicio de sesión, mue
 
 ## Pantallas
 
-<imágenes de la app>
-![Image_text](Screenshots/Página_1.jpg)
+![Primera_Página](Screenshots/Página_1.jpg)
 
+![Segunda_Página](Screenshots/Página_2.jpg)
+
+![Tercera_Página](Screenshots/Página_3.jpg)
+
+![Tarjeta](Screenshots/Pokémon_Tarjeta.jpg)
+
+<style type="text/css">
+    img {
+        width: 50%;
+    }
+</style>
 # Muchas gracias.
