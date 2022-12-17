@@ -7,25 +7,34 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          Expanded(
-              child: Center(
-            child: SizedBox(
-              height: 50,
-              child: SignInButton(
-                Buttons.Google,
-                elevation: 5,
-                text: 'Login UTEM',
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10)),
-                onPressed: () => VoterService.login(context),
+    return Stack(
+      children: [
+        Scaffold(
+          body: Stack(
+            children: [
+              const Image(
+                image: AssetImage('lib/assets/images/App_Flutter.png'),
+                fit: BoxFit.cover,
+                height: 1200,
               ),
-            ),
-          ))
-        ],
-      ),
+              Expanded(
+                  child: Center(
+                child: SizedBox(
+                  height: 50,
+                  child: SignInButton(
+                    Buttons.Google,
+                    elevation: 5,
+                    text: 'Login UTEM',
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    onPressed: () => VoterService.login(context),
+                  ),
+                ),
+              ))
+            ],
+          ),
+        )
+      ],
     );
   }
 }
