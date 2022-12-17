@@ -35,6 +35,8 @@ class PokemonProvider with ChangeNotifier {
   }
 
   Future<dynamic> backPokemons() async {
+    if(cont == 0){}
+    else{
       cont = cont-10;
       Uri url = Uri.parse(_baseURL+'&offset='+cont.toString());
       final response = await http.get(url);
@@ -51,6 +53,7 @@ class PokemonProvider with ChangeNotifier {
           await getPokemonsDetail(resultURL: result.url!);
         }
       }
+    }
   }
 
   Future<dynamic> getPokemonsDetail({required String resultURL}) async {
