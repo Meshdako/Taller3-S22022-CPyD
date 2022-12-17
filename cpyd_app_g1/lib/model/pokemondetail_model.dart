@@ -8,6 +8,7 @@ String pokemonDetailModelToJson(PokemonDetailModel data) =>
 
 class PokemonDetailModel {
   List<Ability>? abilities;
+  //Species? form;
   int? height;
   int? id;
   String? name;
@@ -19,6 +20,7 @@ class PokemonDetailModel {
 
   PokemonDetailModel({
     this.abilities,
+    //this.form,
     this.height,
     this.id,
     this.name,
@@ -33,6 +35,7 @@ class PokemonDetailModel {
       PokemonDetailModel(
         abilities: List<Ability>.from(
             json["abilities"].map((x) => Ability.fromJson(x))),
+        //form: Species.fromJson(json["form"]),
         height: json["height"],
         id: json["id"],
         name: json["name"],
@@ -45,6 +48,7 @@ class PokemonDetailModel {
 
   Map<String, dynamic> toJson() => {
         "abilities": List<dynamic>.from(abilities!.map((x) => x.toJson())),
+        //"form": species!.toJson(),
         "height": height,
         "id": id,
         "name": name,

@@ -39,13 +39,13 @@ class PokemonWidget extends StatelessWidget {
               child: Container(
                 padding: const EdgeInsets.all(8),
                 // ignore: sort_child_properties_last
-                child: Text("${pokemon.name!.toUpperCase()}",
+                child: Text(pokemon.name!.toUpperCase(),
                     style: const TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 12,
                         color: Colors.black)),
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: Colors.white60,
                   borderRadius: BorderRadius.circular(15),
                 ),
               ),
