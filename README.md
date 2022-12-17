@@ -16,6 +16,6 @@ Creación de una aplicación móvil, con _splash screen_, inicio de sesión, mue
 ## Pantallas
 
 <imágenes de la app>
-![Image_text](../Screenshots/Pokémon_1.jpg)
+![Image_text](/Screenshots/Pokémon_1.jpg)
 
 # Muchas gracias.
