@@ -5,20 +5,30 @@ class AboutPokemonWidget extends StatelessWidget {
   final PokemonDetailModel pokemon;
   const AboutPokemonWidget({Key? key, required this.pokemon}) : super(key: key);
 
+  _getHabilidad() {
+    String? habilidad;
+    for (var i = 0; i < pokemon.abilities!.length; i++) {
+      if (pokemon.abilities![i].isHidden == false) {
+        habilidad = pokemon.abilities![i].ability?.name;
+        return habilidad;
+      }
+    }
+  }
+
   _getString() {
     String? oculta;
-    if (pokemon.abilities!.length > 1) {
-      oculta = pokemon.abilities![1].ability?.name! ?? "";
-      return oculta;
+    for (var i = 0; i < pokemon.abilities!.length; i++) {
+      if (pokemon.abilities![i].isHidden == true) {
+        oculta = pokemon.abilities![i].ability?.name;
+        return oculta;
+      }
     }
-    else{
-      oculta = "No tiene habilidad oculta";
-      return oculta;
-    }
+    return "No posee";
   }
 
   @override
   Widget build(BuildContext context) {
+    List<String?> habilidades;
     return Column(
       children: <Widget>[
         const SizedBox(
@@ -90,10 +100,12 @@ class AboutPokemonWidget extends StatelessWidget {
                   Text("Forma: Original"),
                 ]),
               ),
-              Row(children: [
-                const Text("Habilidad: "),
-                Text(pokemon.abilities![0].ability!.name!)
-              ]),
+              Row(
+                children: [
+                  const Text("Habilidad: "),
+                  (_getHabilidad())
+                ]
+              ),
               Row(
                 children: [
                   const Text("Habilidad Oculta: "),
