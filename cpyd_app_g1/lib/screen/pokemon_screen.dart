@@ -37,12 +37,7 @@ class _PokemonScreenState extends State<PokemonScreen>
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red.shade900,
-        title:
-            appLogo /* const Text(
-          'Pokemon',
-          style: TextStyle(color: Colors.yellow),
-        ) */
-        ,
+        title: appLogo,
         centerTitle: true,
       ),
       body: Stack(
@@ -72,13 +67,13 @@ class _PokemonScreenState extends State<PokemonScreen>
                             (e) => Container(
                               margin: const EdgeInsets.only(right: 10),
                               padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
-                              child: Text(e.type!.name!),
                               decoration: BoxDecoration(
                                 color: getBackGroundColor2(
                                   widget.pokemon.types![0].type!.name!,
                                 ),
                                 borderRadius: BorderRadius.circular(10),
                               ),
+                              child: Text(e.type!.name!),
                             ),
                           )
                           .toList(),
