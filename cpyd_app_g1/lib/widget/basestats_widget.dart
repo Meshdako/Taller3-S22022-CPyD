@@ -6,6 +6,22 @@ class BaseStatsWidget extends StatelessWidget {
   final PokemonDetailModel pokemon;
   const BaseStatsWidget({Key? key, required this.pokemon}) : super(key: key);
 
+  _getTranslate(String? name) {
+    if (name == "hp") {
+      return "Puntos de Vida";
+    } else if (name == "attack") {
+      return "Ataque";
+    } else if (name == "defense") {
+      return "Defensa";
+    } else if (name == "special-attack") {
+      return "Ataque Especial";
+    } else if (name == "special-defense") {
+      return "Defensa Especial";
+    } else if (name == "speed") {
+      return "Velocidad";
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -18,7 +34,7 @@ class BaseStatsWidget extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(e.stat!.name!),
+                    Text(_getTranslate(e.stat!.name!)),
                     Row(
                       children: [
                         Text(e.baseStat.toString()),
