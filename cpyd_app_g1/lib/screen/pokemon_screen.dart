@@ -13,44 +13,44 @@ class PokemonScreen extends StatefulWidget {
 }
 
 _getTranslate(String? type) {
-    if (type == "normal") {
-      return "Normal";
-    } else if (type == "fire") {
-      return "Fuego";
-    } else if (type == "water") {
-      return "Agua";
-    } else if (type == "electric") {
-      return "Eléctrico";
-    } else if (type == "grass") {
-      return "Planta";
-    } else if (type == "ice") {
-      return "Hielo";
-    } else if (type == "fighting") {
-      return "Lucha";
-    } else if (type == "poison") {
-      return "Veneno";
-    } else if (type == "ground") {
-      return "Tierra";
-    } else if (type == "flying") {
-      return "Volador";
-    } else if (type == "psychic") {
-      return "Psíquico";
-    } else if (type == "bug") {
-      return "Bicho";
-    } else if (type == "rock") {
-      return "Roca";
-    } else if (type == "ghost") {
-      return "Fantasma";
-    } else if (type == "dragon") {
-      return "Dragón";
-    } else if (type == "dark") {
-      return "Siniestro";
-    } else if (type == "steel") {
-      return "Acero";
-    } else if (type == "fairy") {
-      return "Hada";
-    } 
+  if (type == "normal") {
+    return "Normal";
+  } else if (type == "fire") {
+    return "Fuego";
+  } else if (type == "water") {
+    return "Agua";
+  } else if (type == "electric") {
+    return "Eléctrico";
+  } else if (type == "grass") {
+    return "Planta";
+  } else if (type == "ice") {
+    return "Hielo";
+  } else if (type == "fighting") {
+    return "Lucha";
+  } else if (type == "poison") {
+    return "Veneno";
+  } else if (type == "ground") {
+    return "Tierra";
+  } else if (type == "flying") {
+    return "Volador";
+  } else if (type == "psychic") {
+    return "Psíquico";
+  } else if (type == "bug") {
+    return "Bicho";
+  } else if (type == "rock") {
+    return "Roca";
+  } else if (type == "ghost") {
+    return "Fantasma";
+  } else if (type == "dragon") {
+    return "Dragón";
+  } else if (type == "dark") {
+    return "Siniestro";
+  } else if (type == "steel") {
+    return "Acero";
+  } else if (type == "fairy") {
+    return "Hada";
   }
+}
 
 class _PokemonScreenState extends State<PokemonScreen>
     with TickerProviderStateMixin {
@@ -172,11 +172,11 @@ class _PokemonScreenState extends State<PokemonScreen>
             ],
           ),
           Positioned(
-            left: MediaQuery.of(context).size.width * 0.25,
-            top: MediaQuery.of(context).size.width * 0.25,
+            left: MediaQuery.of(context).size.width * 0.26,
+            top: MediaQuery.of(context).size.width * 0.10,
             child: SizedBox(
-              height: 200,
-              width: 200,
+              height: 250,
+              width: 275,
               child: Image.network(widget
                   .pokemon.sprites!.other!.officialArtwork!.frontDefault!),
             ),
