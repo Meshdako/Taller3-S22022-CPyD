@@ -12,19 +12,18 @@ class LoginScreen extends StatelessWidget {
         children: [
           Expanded(
               child: Center(
-                child: SizedBox(
-                  height: 50,
-                  child: SignInButton(
-                    Buttons.Google,
-                    elevation: 5,
-                    text: 'Login UTEM',
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)),
-                    onPressed: () => VoterService.login(context),
-                  ),
-                ),
-              )
-          )
+            child: SizedBox(
+              height: 50,
+              child: SignInButton(
+                Buttons.Google,
+                elevation: 5,
+                text: 'Login UTEM',
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)),
+                onPressed: () => VoterService.login(context),
+              ),
+            ),
+          ))
         ],
       ),
     );
