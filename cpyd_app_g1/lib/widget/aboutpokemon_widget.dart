@@ -26,6 +26,36 @@ class AboutPokemonWidget extends StatelessWidget {
     return "No posee";
   }
 
+  _getLocation() {
+    String location = "";
+
+    if(pokemon.id! >= 1 && pokemon.id! <= 151){
+        location = "Kanto";
+    }
+    else if(pokemon.id! >=152 && pokemon.id! <=251){
+        location = "Johto";
+    }
+    else if(pokemon.id! >=252 && pokemon.id! <=386){
+        location = "Hoenn";
+    }
+    else if(pokemon.id! >=387 && pokemon.id! <=493){
+        location = "Sinnoh";
+    }
+    else if(pokemon.id! >=494 && pokemon.id! <=649){
+        location = "Unova";
+    }
+    else if(pokemon.id! >=650 && pokemon.id! <=721){
+        location = "Kalos";
+    }
+    else if(pokemon.id! >=722 && pokemon.id! <=809){
+        location = "Alola";
+    }
+    else if(pokemon.id! >=810 && pokemon.id! <=905){
+        location = "Galar";
+    }
+    return location;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -101,11 +131,31 @@ class AboutPokemonWidget extends StatelessWidget {
             ),
             margin: const EdgeInsets.only(right: 10),
             padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
-            height: 100,
+            height: 120,
             width: 400,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                Row(mainAxisAlignment: MainAxisAlignment.center, 
+                children: const [
+                  Text(
+                    "Forma: ",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                      fontFamily: "Helvetica Neue",
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  Text(
+                    "Original",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                      fontFamily: "Helvetica Neue",
+                    ),
+                  )
+                ]),
                 Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                   const Text(
                     "Habilidad: ",
@@ -146,7 +196,26 @@ class AboutPokemonWidget extends StatelessWidget {
                       ),
                     )
                   ],
-                )
+                ),
+                Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  const Text(
+                    "Ubicación: ",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                      fontFamily: "Helvetica Neue",
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  Text(
+                    _getLocation(),
+                    style: const TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                      fontFamily: "Helvetica Neue",
+                    ),
+                  )
+                ]),
               ],
             ))
       ],
