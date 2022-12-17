@@ -28,7 +28,6 @@ class AboutPokemonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<String?> habilidades;
     return Column(
       children: <Widget>[
         const SizedBox(
@@ -85,36 +84,71 @@ class AboutPokemonWidget extends StatelessWidget {
           ),
         ),
         const SizedBox(
-          height: 20,
-        ),
-        const SizedBox(
-          height: 20,
+          height: 40,
         ),
         Container(
-          color: Colors.red,
-          child: Column(
-            children: [
-              Container(
-                color: Colors.green,
-                child: Row(children: const [
-                  Text("Forma: Original"),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              border: Border.all(color: Colors.grey),
+              boxShadow: const [
+                BoxShadow(
+                  color: Colors.grey,
+                  blurRadius: 0,
+                  offset: Offset(5, 8),
+                )
+              ],
+              color: Colors.white,
+            ),
+            margin: const EdgeInsets.only(right: 10),
+            padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
+            height: 100,
+            width: 400,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  const Text(
+                    "Habilidad: ",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                      fontFamily: "Helvetica Neue",
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  Text(
+                    _getHabilidad(),
+                    style: const TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                      fontFamily: "Helvetica Neue",
+                    ),
+                  )
                 ]),
-              ),
-              Row(
-                children: [
-                  const Text("Habilidad: "),
-                  (_getHabilidad())
-                ]
-              ),
-              Row(
-                children: [
-                  const Text("Habilidad Oculta: "),
-                  Text(_getString())
-                ],
-              )
-            ],
-          ),
-        ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      "Habilidad Oculta: ",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20,
+                        fontFamily: "Helvetica Neue",
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    Text(
+                      _getString(),
+                      style: const TextStyle(
+                        color: Colors.black,
+                        fontSize: 20,
+                        fontFamily: "Helvetica Neue",
+                      ),
+                    )
+                  ],
+                )
+              ],
+            ))
       ],
     );
   }
