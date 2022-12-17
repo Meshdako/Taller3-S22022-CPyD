@@ -1,7 +1,5 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:cpyd_app_g1/home_page.dart';
 import 'package:cpyd_app_g1/screen/login.dart';
 
 void main() {

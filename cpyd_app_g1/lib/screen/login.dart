@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:cpyd_app_g1/service/voter.dart';
 
 class LoginScreen extends StatelessWidget {
